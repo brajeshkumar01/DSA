@@ -5,22 +5,23 @@ public:
           int m = matrix.size();
           int n = matrix[0].size();
 
-          unordered_map<int, int>map;
+          unordered_map<int , int>map;
 
           for(int i = 0; i<m; i++){
 
-              for(int j = 0; j<n; j++){
+               for(int j = 0; j<n; j++){
 
-                   int diag = i - j;
+                    int diag = i - j;
 
-                   if(map.find(diag) == map.end()){
+                    if(map.find(diag) == map.end()){
 
-                         map[diag] = matrix[i][j];
-                   }else if(map[diag] != matrix[i][j]){
+                            map[diag] = matrix[i][j];
+                            
+                    }else if(map[diag] != matrix[i][j]){
 
                          return false;
-                   }
-              }
+                    }
+               }
           }
              return true;
     }
