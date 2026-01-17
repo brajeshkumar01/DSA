@@ -2,14 +2,13 @@ class Solution {
 public:
     int hammingDistance(int x, int y) {
         
-        int xorresult = x ^ y;
-
+        int xorsum = x ^ y;
         int count = 0;
-        while(xorresult > 0){
+        while(xorsum > 0){
 
-              count +=(xorresult & 1);
-              xorresult >>= 1; // check right shift next bit
+              count +=(xorsum & 1);
+              xorsum >>=1;
         }
-           return count;
+             return count;
     }
 };
