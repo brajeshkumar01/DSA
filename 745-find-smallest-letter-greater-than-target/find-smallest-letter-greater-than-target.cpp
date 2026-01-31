@@ -1,13 +1,13 @@
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
-          
-            auto it = upper_bound(letters.begin(), letters.end() , target);
+         
+         auto it = upper_bound(letters.begin() , letters.end(), target);
 
-                 if(it == letters.end()){
+         if(it == letters.end()){
 
-                      return letters.front();
-                 }
-            return *it;
+               return letters.front();
+         }
+                return *it;
     }
 };
