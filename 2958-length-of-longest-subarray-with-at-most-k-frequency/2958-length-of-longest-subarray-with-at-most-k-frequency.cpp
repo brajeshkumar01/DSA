@@ -3,26 +3,25 @@ public:
     int maxSubarrayLength(vector<int>& nums, int k) {
         
           unordered_map<int , int>freq;
+          int left = 0, maxlen = 0;
           int n = nums.size();
-          int left = 0;
-          int maxlen = 0;
 
-          for(int right = 0; right < n; right++){
+           for(int right = 0; right <n; right++){
 
-                 freq[nums[right]]++;
+                     freq[nums[right]]++;
 
-                 while(freq[nums[right]] > k){
-                   
-                   freq[nums[left]]--;
+                     while(freq[nums[right]] > k){
 
-                   if(freq[nums[left]] == 0){
-                      freq.erase(nums[left]);
-                 }
-                      left++;
-                 }
+                           freq[nums[left]]--;
 
-                   maxlen = max(maxlen , right - left + 1);
-          }
+                           if(freq[nums[left]] == 0){
+
+                               freq.erase(nums[left]);
+                           }
+                              left++;
+                     }
+                       maxlen = max(maxlen , right-left+1);
+           }
               return maxlen;
     }
 };
