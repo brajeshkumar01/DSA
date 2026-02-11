@@ -2,26 +2,26 @@ class Solution {
 public:
     int longestBalanced(vector<int>& nums) {
         
-          int maxlen = 0;
           int n = nums.size();
-          for(int start = 0; start < n; start++){
+          int maxlen = 0;
 
-              unordered_set<int>evennum;
-              unordered_set<int>oddnum;
-              
+          for(int start = 0; start<n; start++){
+
+                unordered_set<int>oddcount;
+                unordered_set<int>evencount;
+
                 for(int end = start; end<n; end++){
 
+                        if(nums[end] % 2 == 1){
 
-                        if(nums[end] % 2 == 0){
-
-                               evennum.insert(nums[end]);
+                             evencount.insert(nums[end]);
                         }else{
 
-                             oddnum.insert(nums[end]);
+                             oddcount.insert(nums[end]);
                         }
-                           if(evennum.size() == oddnum.size()){
+                           if(oddcount.size() == evencount.size()){
 
-                                 maxlen = max(maxlen , end-start+1);
+                               maxlen = max(maxlen , end-start+1);
                            }
                 }
           }
