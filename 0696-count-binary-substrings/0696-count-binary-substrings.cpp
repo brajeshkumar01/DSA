@@ -4,25 +4,27 @@ public:
         
          vector<int>groups;
          int count = 1;
-          int n = s.size();
+         int n = s.size();
+
          for(int i = 1; i<n; i++){
 
-                if(s[i] == s[i-1]){
+               if(s[i] == s[i-1]){
 
-                     count++;
-                }else{
+                   count++;
+               }else{
 
                      groups.push_back(count);
                      count = 1;
-                }
+               }
          }
-           groups.push_back(count);
 
-           int result = 0;
-           for(int i = 1; i< groups.size(); i++){
+            groups.push_back(count);
+            int result = 0;
 
-                 result += min(groups[i-1], groups[i]);
-           }
-             return result;
+            for(int i = 1; i<groups.size(); i++){
+
+                  result += min(groups[i-1], groups[i]);
+            }
+                 return result;
     }
 };
