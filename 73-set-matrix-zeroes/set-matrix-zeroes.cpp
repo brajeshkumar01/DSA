@@ -8,36 +8,37 @@ public:
           vector<bool>rowzero(m , false);
           vector<bool>colzero(n , false);
 
-          for(int i = 0; i<m; i++){
+            for(int i = 0; i<m; i++){
 
-                for(int j = 0; j<n; j++){
+                  for(int j = 0; j<n; j++){
 
-                       if(matrix[i][j] == 0){
+                        if(matrix[i][j] == 0){
 
-                            rowzero[i] = true;
-                            colzero[j] = true;
-                       }
-                }
-          }
-             for(int i = 0; i<m; i++){
+                               rowzero[i] = true;
+                               colzero[j] = true;
+                        }
+                  }
+            }
+                for(int i = 0; i<m; i++){
 
-                   if(rowzero[i]){
+                      if(rowzero[i]){
 
-                       for(int j = 0; j<n; j++){
+                            for(int j = 0; j<n; j++){
 
-                             matrix[i][j]  = 0;
-                       }
-                   }
-             }
-                for(int j = 0; j<n; j++){
-
-                      if(colzero[j]){
-
-                          for(int i = 0; i<m; i++){
-
-                                matrix[i][j] = 0;
-                          }
+                                  matrix[i][j] = 0;
+                            }
                       }
                 }
+
+                  for(int j = 0; j<n; j++){
+
+                         if(colzero[j]){
+
+                              for(int i = 0; i<m; i++){
+
+                                    matrix[i][j] = 0;
+                              }
+                         }
+                  }
     }
 };
