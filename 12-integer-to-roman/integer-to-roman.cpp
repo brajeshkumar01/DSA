@@ -11,12 +11,12 @@ public:
            string result = "";
            for(const auto& pair : values){
 
-              while(num >= pair.first){
+                while(num >= pair.first){
 
-                     result+=pair.second;
-                     num-=pair.first;
-              }
+                    result+= pair.second;
+                    num -= pair.first;
+                }
            }
-               return result;
+              return result;
     }
 };
