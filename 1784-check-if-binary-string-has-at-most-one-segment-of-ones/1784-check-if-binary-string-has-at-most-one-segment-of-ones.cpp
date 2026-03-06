@@ -3,25 +3,24 @@ public:
     bool checkOnesSegment(string s) {
         
          int n = s.size();
-         bool foundsegment = false;
+         bool foundsegement = false;
 
          for(int i = 0; i<n; i++){
 
-                 if(s[i] == '1'){
+               if(s[i] == '1'){
 
-                       if(foundsegment){
+                   if(foundsegement){
 
-                           return false;
-                       }
+                        return false;
+                   }
+                        foundsegement = true;
+                        while(i < n && s[i] == '1'){
 
-                          foundsegment = true;
-
-                          while(i < n && s[i] == '1'){
-
-                             i++;
-                          }
-                 }
-         }
+                            i++;
+                        }
+                   }
+               }
+               
             return true;
     }
 };
