@@ -2,24 +2,26 @@ class Solution {
 public:
     int firstUniqueFreq(vector<int>& nums) {
         
-           unordered_map<int, int>freq;
-           int n = nums.size();
-           for(int i = 0; i<n; i++){
-                ++freq[nums[i]];
+        int n =   nums.size();
+        unordered_map<int , int>freq;
+        for(int i = 0; i<n; i++){
+
+               ++freq[nums[i]];
+        }
+           unordered_map<int , int>freqmap;
+
+           for(const auto& pair : freq){
+
+
+                ++freqmap[pair.second];
            }
-             unordered_map<int , int>freqcount;
+              for(int num : nums){
 
-             for(const auto& pair : freq){
+                    if(freqmap[freq[num]] == 1){
 
-                  ++freqcount[pair.second];
-             }
-               for(int num : nums){
-
-                    if(freqcount[freq[num]] == 1){
-
-                           return num;
+                          return num;
                     }
-               }
-                  return -1;
+              }
+                 return -1;
     }
 };
