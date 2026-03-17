@@ -5,20 +5,20 @@ public:
           int n = nums.size();
           int len = 1;
           vector<int>result;
+
           result.push_back(nums[0]);
 
-            for(int i = 0; i<n; i++){
+          for(int i = 0; i<n; i++){
 
-                  if(nums[i] > result.back()){
-                           
-                           result.push_back(nums[i]);
-                         len++;
-                  }
+                if(nums[i] > result.back()){
 
-                    auto index = lower_bound(result.begin(), result.end(), nums[i]);
+                      result.push_back(nums[i]);
+                      len++;
+                }
 
-                    *index = nums[i];
-            }
-               return len;
+                auto index = lower_bound(result.begin() , result.end(), nums[i]);
+                *index = nums[i];
+          }
+             return len;
     }
 };
