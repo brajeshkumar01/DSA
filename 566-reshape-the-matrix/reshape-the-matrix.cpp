@@ -11,13 +11,13 @@ public:
 
          for(int i = 0; i<originalrow; i++){
 
-              for(int j = 0; j<originalcol; j++){
+                for(int j = 0; j<originalcol; j++){
 
-                   int index = i * originalcol + j;
+                       int index = i * originalcol + j;
 
-                   reshape[index/c][index % c] = mat[i][j];
-              }
+                       reshape[index / c][index % c] = mat[i][j];
+                }
          }
-           return reshape;
+            return reshape;
     }
 };
