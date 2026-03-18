@@ -11,9 +11,9 @@ public:
 
                for(int j = 0; j<n; j++){
 
-                      transpose[j][i] = matrix[i][j];
+                     transpose[j][i] = matrix[i][j];
                }
           }
-             return transpose;
+            return transpose;
     }
 };
