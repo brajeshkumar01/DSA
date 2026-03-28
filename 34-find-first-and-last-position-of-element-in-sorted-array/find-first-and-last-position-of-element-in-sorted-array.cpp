@@ -2,20 +2,20 @@ class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
         
-        int n = nums.size();
-        int index = -1;
-        vector<int>result{-1, -1};
-        for(int i = 0; i<n; i++){
+             int n = nums.size();
+             vector<int>result{-1, -1};
 
-               if(nums[i] == target){
+             for(int i = 0; i<n; i++){
 
-                    if(result[0] == -1){
+                     if(nums[i] == target){
 
-                         result[0] = i;
-                    }
-                      result[1] = i;
-               }
-        }
-            return result;
+                           if(result[0] == -1){
+
+                                 result[0] = i;
+                           }
+                              result[1] = i;
+                     }
+             }
+                return result;
     }
 };
