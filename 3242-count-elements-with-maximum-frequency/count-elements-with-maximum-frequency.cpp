@@ -2,23 +2,21 @@ class Solution {
 public:
     int maxFrequencyElements(vector<int>& nums) {
         
-          int maxe = 0;
-          int count = 0;
+          int n = nums.size();
+          unordered_map<int , int>freqmap;
+          int maxe = 0, count = 0;
 
-          unordered_map<int , int>freq;
           for(int num : nums){
 
-              ++freq[num];
+               ++freqmap[num];
 
-              maxe = max(maxe, freq[num]);
+               maxe = max(maxe, freqmap[num]);
           }
-            for(const auto& pair : freq){
+              for(const auto& pair : freqmap){
 
-                 if(pair.second == maxe){
-
-                     count+= pair.second;
-                 }
-            }
-               return count;
+                  if(pair.second == maxe)
+                  count+=pair.second;
+              }
+                 return count;
     }
 };
