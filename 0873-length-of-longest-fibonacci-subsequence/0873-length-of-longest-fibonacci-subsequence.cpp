@@ -3,29 +3,29 @@ public:
     int lenLongestFibSubseq(vector<int>& arr) {
         
         int n = arr.size();
-        unordered_set<int> st(arr.begin(), arr.end());
+        unordered_set<int>st(arr.begin() , arr.end());
 
-        int maxLen = 0;
+        int maxlen = 0;
+        for(int i = 0; i<n; i++){
 
-        for(int i = 0; i < n; i++) {
-            for(int j = i + 1; j < n; j++) {
+               for(int j = i+1; j<n; j++){
 
-                int a = arr[i];
-                int b = arr[j];
-                int len = 2;
+                     int a = arr[i];
+                     int b = arr[j];
+                     int len = 2;
 
-                while(st.count(a + b)) {
-                    int c = a + b;
-                    a = b;
-                    b = c;
-                    len++;
-                }
+                     while(st.count(a+b)){
 
-                if(len >= 3)
-                    maxLen = max(maxLen, len);
-            }
+                          int c = a + b;
+                          a = b;
+                          b = c;
+                          len++;
+                     }
+                       if(len >= 3)
+
+                         maxlen = max(maxlen , len);
+               }
         }
-
-        return maxLen;
+           return maxlen;
     }
 };
