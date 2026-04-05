@@ -2,7 +2,7 @@ class Solution {
 public:
     bool judgeCircle(string moves) {
         
-          int x = 0 , y = 0;
+          int x = 0, y = 0;
           for(char ch : moves){
 
                if(ch == 'U') y++;
@@ -10,7 +10,6 @@ public:
                else if(ch == 'L') x++;
                else if(ch == 'R') x--;
           }
-
-            return x == 0 && y == 0;
+             return x == 0 && y == 0;
     }
 };
