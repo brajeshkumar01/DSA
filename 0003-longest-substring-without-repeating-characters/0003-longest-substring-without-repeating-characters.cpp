@@ -11,11 +11,10 @@ public:
 
                if(dict[s[i]] > index){
 
-                    index = dict[s[i]];
+                        index = dict[s[i]];
                }
-                    dict[s[i]] = i;
-
-                    res = max(res , i-index);
+                  dict[s[i]] = i;
+                  res = max(res, i-index);
         }
            return res;
     }
