@@ -5,41 +5,33 @@ public:
           int m = matrix.size();
           int n = matrix[0].size();
 
-          vector<bool> rowzero(m , false);
-          vector<bool> colzero(n , false);
+          vector<bool>rowzero(m, false);
+          vector<bool>colzero(n, false);
 
           for(int i = 0; i<m; i++){
-
-               for(int j = 0; j<n; j++){
-
-                    if(matrix[i][j] == 0){
-
+              for(int j = 0; j<n; j++){
+                   if(matrix[i][j] == 0){
                            rowzero[i] = true;
                            colzero[j] = true;
-                    }
-               }
-          }
-
-             for(int i = 0; i<m; i++){
-
-                   if(rowzero[i]){
-
-                        for(int j = 0; j<n; j++){
-
-                               matrix[i][j] = 0;
-                        }
-                   }
-             }
-
-              for(int j = 0; j<n; j++){
-
-                   if(colzero[j]){
-
-                        for(int i = 0; i<m; i++){
-
-                              matrix[i][j] = 0;
-                        }
                    }
               }
+          }
+             for(int i = 0; i<m; i++){
+                  if(rowzero[i]){
+                     for(int j = 0; j<n; j++){
+                          
+                          matrix[i][j] = 0;
+                     }
+                  }
+             }
+
+             for(int j = 0; j<n; j++){
+                   if(colzero[j]){
+                       for(int i = 0; i<m; i++){
+                             
+                             matrix[i][j] = 0;
+                       }
+                   }
+             }
     }
 };
