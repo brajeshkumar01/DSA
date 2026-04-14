@@ -2,38 +2,35 @@ class Solution {
 public:
     int threeSumClosest(vector<int>& nums, int target) {
         
-         int n = nums.size();
-         sort(nums.begin(), nums.end());
-         int result = nums[0]+nums[1]+nums[2];
-         int mindiff = INT_MAX;
-         for(int i = 0; i<n-2; i++){
+          int n = nums.size();
+          int result = nums[0]+nums[1]+nums[2];
+          sort(nums.begin(), nums.end());
+          int mindiff = INT_MAX;
 
-                int left = i+1 , right = n-1;
+          for(int i = 0; i<n-2; i++){
 
-                while(left < right){
+               int left = i+1 , right = n-1;
+               while(left < right){
 
-                      int sum = nums[i]+nums[left]+nums[right];
+                    int sum = nums[i]+nums[left]+nums[right];
+                    if(sum == target){
 
-                      if(sum == target){
+                          return target;
+                    }if(sum < target){
 
-                           return target;
+                          left++;
+                    }else{
+
+                          right--;
+                    }
+                      int mintodiff = abs(sum - target);
+                      if(mintodiff < mindiff){
+
+                          mindiff = mintodiff;
+                          result = sum;
                       }
-                         if(sum < target){
-
-                               left++;
-                              
-                         }else{
-                              right--;
-                                     }
-                                          int mintodiff = abs(sum - target);
-                                     if(mintodiff < mindiff){
-
-                                           mindiff = mintodiff;
-                                           result = sum;
-                                     }
-                               }
-                         }
-                    return result;
-         
+               }
+          }
+             return result;
     }
 };
