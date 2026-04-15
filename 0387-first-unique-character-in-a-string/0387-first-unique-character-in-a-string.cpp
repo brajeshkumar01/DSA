@@ -2,20 +2,19 @@ class Solution {
 public:
     int firstUniqChar(string s) {
 
-          int n = s.size();
-          unordered_map<char , int>freqmap;
+          int n = s.length();
+          unordered_map<char , int>freq;
+          for(char ch : s){
 
-          for(int i = 0; i<n; i++){
-
-              ++freqmap[s[i]];
+                freq[ch]++;
           }
             for(int i = 0; i<n; i++){
+                   
+                      if(freq[s[i]] == 1){
 
-                  if(freqmap[s[i]] == 1){
-
-                       return i;
-                  }
+                          return i;
+                      }
             }
-              return -1;
+               return -1;
     }
 };
