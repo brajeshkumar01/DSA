@@ -18,24 +18,25 @@ public:
 
           if(root == nullptr) return result;
           q.push(root);
+
           while(!q.empty()){
 
-               int levelsize = q.size();
-               vector<int>currlevel;
+                 int levelsize = q.size();
+                 vector<int>currlevel;
 
-               for(int i = 0; i<levelsize; i++){
+                 for(int i = 0; i<levelsize; i++){
 
                        TreeNode* node = q.front();
                        q.pop();
+
                        currlevel.push_back(node->val);
                        if(node->left != nullptr)
                        q.push(node->left);
                        if(node->right != nullptr)
-                        q.push(node->right);
-                    }
-                          result.push_back(currlevel);
-               }
-
-             return result;
+                       q.push(node->right);
+                 }
+                     result.push_back(currlevel);
+          }
+              return result;
     }
 };
