@@ -9,18 +9,18 @@ public:
 
                 ++freqmap[nums[i]];
            }
-              unordered_map<int, int>freq;
+              unordered_map<int , int>freq;
               for(const auto& pair : freqmap){
 
-                   ++freq[pair.second];  
+                 ++freq[pair.second];
               }
-                 for(int num : nums){
+                for(int num : nums){
 
                       if(freq[freqmap[num]] == 1){
 
-                             return num;
+                           return num;
                       }
-                 }
-                   return -1;
+                }
+                  return -1;
     }
 };
