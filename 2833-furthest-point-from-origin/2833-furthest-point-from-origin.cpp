@@ -4,12 +4,13 @@ public:
         
           int x = 0 , r = 0;
 
-             for(char c : moves){
+          for(char c : moves){
 
-                   x += (c == 'L') - (c == 'R');
+               x += (c == 'L') -(c == 'R');
 
-                   r+= c == '_';
-             }
-               return abs(x) + r;
+               r += c == '_';
+          }
+
+             return abs(x)+r;
     }
 };
