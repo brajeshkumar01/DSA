@@ -4,17 +4,17 @@ public:
 
           int count = 0;
           vector<int> givennum = nums;
-          for(int num : givennum){
+          for(int num : nums){
 
                while(num > 0){
 
-                     if(num % 10 == digit){
+                    if(num % 10 == digit){
 
-                          count++;
-                     }
+                         count++;
+                    }
                        num /= 10;
                }
           }
-                  return count;
+             return count;
     }
 };
