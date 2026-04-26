@@ -7,28 +7,29 @@ public:
 
         // opposite iterate
 
-           for(int i = n-2; i>=0; i--){
+          for(int i = n-2; i>=0; i--){
 
-                if(nums[i] < nums[i+1]){
+               if(nums[i] < nums[i+1]){
 
-                     index = i;
-                     break;
-                }
-           }
+                      index = i;
+                      break;
+               }
+          }
              if(index == -1){
 
-                   reverse(nums.begin(), nums.end());
-                   return;
+                  reverse(nums.begin(), nums.end());
+                  return;
              }
 
-                for(int i = n-1; i>=index; i--){
+               for(int i = n-1; i>=index; i--){
 
-                      if(nums[i] > nums[index]){
+                     if(nums[i] > nums[index]){
 
-                          swap(nums[i] , nums[index]);
-                          break;
-                      }
-                }
-                  return reverse(nums.begin()+1+index , nums.end());
+                        swap(nums[i] , nums[index]);
+                        break;
+                     }
+               }
+
+               return reverse(nums.begin()+1+index , nums.end());
     }
 };
