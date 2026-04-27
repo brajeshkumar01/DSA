@@ -3,12 +3,11 @@ public:
     bool rotateString(string s, string goal) {
         
           if(s.length() != goal.length()) return false;
-
-          if(s.empty() && goal.empty()) return true;
+          if(s.empty() && goal.empty())  return true;
 
           string temp = s + s;
 
-          return temp.find(goal) != string::npos; 
+          return temp.find(goal) != string::npos;
     }
 };
 
