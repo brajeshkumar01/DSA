@@ -2,22 +2,21 @@ class Solution {
 public:
     bool validDigit(int n, int x) {
         
+           string str = to_string(n);
 
-               string str = to_string(n);
+           if(str[0]-'0' == x){
 
-               if(str[0]-'0' == x){
+                return false;
+           } 
 
-                  return false;
-               }
-                
-                 for(char c : str){
+              for(char ch : str) {
 
-                     if(c - '0' == x){
+                   if(ch-'0' == x){
 
-                          return true;
-                     }
-                 }
+                        return true;
+                   }
+              } 
 
-                  return false;
+               return false; 
     }
 };
