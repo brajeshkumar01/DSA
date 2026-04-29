@@ -3,25 +3,26 @@ public:
     int maxArea(vector<int>& height) {
         
         int n = height.size();
-        int left = 0, right = n-1;
+        int left = 0 , right = n-1;
+
         int maxwater = 0;
-            
-            while(left < right){
 
-                  int currheight = min(height[left], height[right]);
-                  int width = right - left;
-                  int currwidth = currheight * width;
+        while(left < right){
 
-                  maxwater = max(maxwater , currwidth);
+              int currheight = min(height[left] , height[right]);
+              int width = right - left;
+              int currwidth = currheight * width;
 
-                  if(height[left] < height[right]){
+              maxwater = max(maxwater , currwidth);
 
-                       left++;
-                  }else{
+              if(height[left] < height[right]){
 
-                       right--;
-                  }
-            }
-               return maxwater;
+                   left++;
+              }else{
+
+                   right--;
+              }
+        }
+           return maxwater;
     }
 };
