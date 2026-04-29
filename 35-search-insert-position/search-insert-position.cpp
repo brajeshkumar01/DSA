@@ -2,16 +2,16 @@ class Solution {
 public:
     int searchInsert(vector<int>& nums, int target) {
         
-         int n = nums.size();
-         sort(nums.begin(), nums.end());
+        int n = nums.size();
+        sort(nums.begin() , nums.end());
 
-          for(int i = 0; i<n; i++){
+        for(int i = 0; i<n; i++){
 
                 if(nums[i] >= target){
-
+                     
                       return i;
                 }
-          }
-             return n;
+        }
+            return n;
     }
 };
