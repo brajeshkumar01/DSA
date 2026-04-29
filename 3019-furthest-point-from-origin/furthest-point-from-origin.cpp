@@ -6,11 +6,10 @@ public:
 
           for(char c : moves){
 
-               x += (c == 'L') -(c == 'R');
+                x += (c == 'L') - (c == 'R');
 
-               r += c == '_';
+                r += c == '_';
           }
-
              return abs(x)+r;
     }
 };
