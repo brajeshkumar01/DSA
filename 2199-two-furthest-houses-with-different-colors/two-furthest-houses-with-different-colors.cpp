@@ -4,17 +4,17 @@ public:
         
            int n = colors.size();
            int diff = 0;
-            
-              for(int i = 0; i<n; i++){
 
-                    for(int j = n-1; j>=0; j--){
+           for(int i = 0; i<n; i++){
 
-                           if(colors[i] != colors[j]){
+                for(int j = n-1; j>=0; j--){
 
-                                 diff = max(diff , abs(j - i));
-                           }
-                    }
-              }
-                 return diff;
+                        if(colors[i] != colors[j]){
+                       diff = max(diff , abs(j - i));
+                }
+
+                }
+           }
+              return diff;
     }
 };
