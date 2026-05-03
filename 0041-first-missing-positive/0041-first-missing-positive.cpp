@@ -13,7 +13,7 @@ public:
                     res++;
                }else if(res < nums[i]){
 
-                     break;
+                    break;
                }
           }
              return res;
