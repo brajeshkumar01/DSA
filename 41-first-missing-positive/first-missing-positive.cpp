@@ -8,14 +8,14 @@ public:
 
           for(int i = 0; i<n; i++){
 
-                 if(res == nums[i]){
+               if(res == nums[i]){
 
-                      res++;
-                 }else if(res < nums[i]){
+                    res++;
+               }else if(res < nums[i]){
 
-                      break;
-                 }
+                    break;
+               }
           }
-              return res;
+             return res;
     }
 };
