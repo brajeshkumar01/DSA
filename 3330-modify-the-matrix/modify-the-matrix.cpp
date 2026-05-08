@@ -2,32 +2,33 @@ class Solution {
 public:
     vector<vector<int>> modifiedMatrix(vector<vector<int>>& matrix) {
         
-           int m = matrix.size();
-           int n = matrix[0].size();
-           vector<vector<int>>result(m , vector<int>(n , 0));
+        int m = matrix.size();
+        int n = matrix[0].size();
+        vector<vector<int>>result(m, vector<int>(n , 0));
 
-           for(int i = 0; i<m; i++){
+        for(int i = 0; i<m; i++){
 
-               for(int j = 0; j<n; j++){
+             for(int j =  0; j<n; j++){
 
-                     if(matrix[i][j] != -1){
+                  if(matrix[i][j] != -1){
 
-                          result[i][j] = matrix[i][j];
-                    } else{
+                        result[i][j] = matrix[i][j];
+                  }else{
 
-                         int maxval = INT_MIN;
-                         
-                         for(int k = 0; k<m; k++){
-                               
-                               if(matrix[k][j] != -1){
-                               maxval = max(maxval , matrix[k][j]);
-                         }
-                    }
-                            result[i][j] = maxval; 
-                     }
-                                 
+                       int maxval = INT_MIN;
+
+                       for(int k = 0; k<m; k++){
+
+                            if(matrix[k][j] != -1){
+
+                                  maxval = max(maxval , matrix[k][j]);
+                            }
+                       }
+                           result[i][j] = maxval;
                   }
-           }
-                   return result;
+             }
+              
+        }   
+          return result;
     }
 };
