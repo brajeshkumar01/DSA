@@ -4,18 +4,17 @@ public:
         
            string str = to_string(n);
 
-             if(str[0]-'0' == x){
+           if(str[0]-'0' == x){
 
-                   return false;
+               return false;
+           }
+             for(char c : str){
+
+                  if(c - '0' == x){
+
+                      return true;
+                  }
              }
-
-                for(char ch : str){
-
-                      if(ch - '0' == x){
-
-                          return true;
-                      }
-                }
-                  return false;
+               return false;
     }
 };
