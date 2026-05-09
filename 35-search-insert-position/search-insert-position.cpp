@@ -3,15 +3,15 @@ public:
     int searchInsert(vector<int>& nums, int target) {
         
         int n = nums.size();
-        sort(nums.begin(), nums.end());
+        sort(nums.begin() , nums.end());
 
         for(int i = 0; i<n; i++){
 
-            if(nums[i] >= target){
+               if(nums[i] >= target){
 
-                  return i;
-            }
+                    return i;
+               }
         }
-            return n;
+           return n;
     }
 };
