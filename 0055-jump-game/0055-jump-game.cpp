@@ -9,11 +9,11 @@ public:
 
                if(reachable < i){
 
-                    return false;
+                     return false;
                }
 
                  reachable = max(reachable , i+nums[i]);
          }
-           return true;
+            return true;
     }
 };
