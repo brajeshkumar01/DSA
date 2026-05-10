@@ -5,29 +5,30 @@ public:
              int n = height.size();
              int leftmax[n] , rightmax[n];
              int trapwater = 0;
-
-             // iterate left to right
-
              leftmax[0] = height[0];
+
              for(int i = 1; i<n; i++){
 
-                   leftmax[i] = max(leftmax[i-1] , height[i]);
+                    leftmax[i] = max(leftmax[i-1] , height[i]);
              }
 
-             rightmax[n-1] = height[n-1];
-             for(int i = n-2; i>=0; i--){
+               rightmax[n-1] = height[n-1];
 
-                   rightmax[i] = max(rightmax[i+1] , height[i]);
-             }
-                for(int i = 0; i<n; i++){
+               for(int i = n-2; i>=0; i--){
 
-                       int minheight = min(leftmax[i] , rightmax[i]);
+                     rightmax[i] = max(rightmax[i+1] , height[i]);
+               }
+                    for(int i = 0; i<n; i++){
 
-                       if(minheight > height[i]){
+                      int minheight = min(leftmax[i] , rightmax[i]);
 
-                           trapwater +=minheight - height[i];
-                       }
-                }
-                  return trapwater;
+                      if(minheight > height[i]){
+
+                          trapwater += (minheight - height[i]);
+                      }
+
+                    }
+
+                     return trapwater;
     }
 };
