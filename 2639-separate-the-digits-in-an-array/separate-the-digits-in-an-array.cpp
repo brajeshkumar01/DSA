@@ -4,18 +4,17 @@ public:
         
           int n = nums.size();
           vector<int>result;
-
           for(int i = n-1; i>=0; i--){
 
-               int x = nums[i];
+                int x = nums[i];
 
-               while(x > 0){
+                while(x > 0){
 
-                    result.push_back(x % 10);
-                    x /= 10;
-               }
+                     result.push_back(x % 10);
+                     x /= 10;
+                }
           }
-             reverse(result.begin() , result.end());
+             reverse(result.begin(), result.end());
              return result;
     }
 };
