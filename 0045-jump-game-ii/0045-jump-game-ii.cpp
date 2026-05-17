@@ -3,6 +3,7 @@ public:
     int jump(vector<int>& nums) {
         
          int n = nums.size();
+
          int totaljump = 0;
          int lastjump  = 0;
          int coverage  = 0;
@@ -10,23 +11,22 @@ public:
 
          for(int i = 0; i<n; i++){
 
-              // update coverage
+                // update coverage
 
-              coverage = max(coverage , i+nums[i]);
+                coverage = max(coverage , i+nums[i]);
+                if(i == lastjump){
 
-              if(i == lastjump){
+                     if(i != n-1){
 
-                   if(i != n-1){
+                         totaljump++;
+                     }
 
-                       totaljump++;
-                   }
-
-                    lastjump = coverage;
-                    if(coverage >= destination){
+                     lastjump = coverage;
+                     if(coverage >= destination){
 
                           return totaljump;
-                    }
-              }
+                     }
+                }
          }
             return totaljump;
     }
