@@ -6,27 +6,27 @@ public:
 
          int totaljump = 0;
          int lastjump  = 0;
-         int coverage  = 0;
+         int coverage =  0;
          int destination = n-1;
 
          for(int i = 0; i<n; i++){
 
-                // update coverage
+               coverage = max(coverage , i+nums[i]);
+               
+               if(i == lastjump){
 
-                coverage = max(coverage , i+nums[i]);
-                if(i == lastjump){
+                   if(i != n-1){
 
-                     if(i != n-1){
+                        totaljump++;
+                   }
 
-                         totaljump++;
-                     }
+                    lastjump = coverage;
 
-                     lastjump = coverage;
-                     if(coverage >= destination){
+                    if(coverage >= destination){
 
-                          return totaljump;
-                     }
-                }
+                           return totaljump;
+                    }
+               }
          }
             return totaljump;
     }
