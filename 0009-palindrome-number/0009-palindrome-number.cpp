@@ -2,19 +2,19 @@ class Solution {
 public:
     bool isPalindrome(int x) {
         
-        string str = to_string(x);
-        int n = str.size();
-         
-         int left = 0 , right = n-1;
-         while(left < right){
+          string  str = to_string(x);
+          int n = str.length();
 
-              if(str[left] != str[right]){
+              int left = 0, right = n-1;
+              while(left < right){
 
-                   return false;
+                   if(str[left] != str[right]){
+
+                        return false;
+                   }
+                      left++;
+                      right--;
               }
-                 left++;
-                 right--;
-         }
-            return true;
+                return true;
     }
 };
