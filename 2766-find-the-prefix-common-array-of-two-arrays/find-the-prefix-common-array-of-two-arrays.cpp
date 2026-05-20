@@ -4,28 +4,25 @@ public:
         
         int n = A.size();
 
-        vector<int> result;
-        vector<int> freq(n + 1, 0);
-
+        vector<int>result;
+        vector<int>freq(n+1 , 0);
         int common = 0;
 
-        for(int i = 0; i < n; i++) {
+         for(int i = 0; i<n; i++){
 
-            freq[A[i]]++;
+              freq[A[i]]++;
 
-            if(freq[A[i]] == 2) {
-                common++;
-            }
+              if(freq[A[i]] == 2){
 
-            freq[B[i]]++;
+                   common++;
+              }
+                 freq[B[i]]++;
+                 if(freq[B[i]] == 2){
 
-            if(freq[B[i]] == 2) {
-                common++;
-            }
-
-            result.push_back(common);
-        }
-
-        return result;
+                     common++;
+                 }
+                   result.push_back(common);
+         }
+            return result;
     }
 };
