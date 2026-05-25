@@ -11,8 +11,9 @@ public:
 
                    return false;
               }
-                 reachable = max(reachable , i+nums[i]);
+
+                reachable = max(reachable , i+nums[i]);
         }
-           return true;
+            return true;
     }
 };
