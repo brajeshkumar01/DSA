@@ -3,25 +3,28 @@ public:
     int numberOfSpecialChars(string word) {
         
         int count = 0;
-        vector<int> lower(26, false);
-        vector<int> upper(26, false);
+        vector<int>lower(26 , false);
+        vector<int>upper(26 , false);
 
-           for(char ch : word){
+         for(char ch : word){
 
-                  if(islower(ch)){
+              if(islower(ch)){
 
-                    lower[ch - 'a'] = true;
-                  }else if(isupper(ch)){
+                  lower[ch - 'a'] = true;
+              }
 
-                       upper[ch - 'A'] = true;
+                 else if(isupper(ch)){
+
+                      upper[ch - 'A'] = true;
+                 }
+         }
+            for(int i = 0; i<26; i++){
+
+                  if(lower[i] && upper[i]){
+
+                       count++;
                   }
-           }
-                     for(int i = 0; i<26; i++){
-                     if(lower[i] && upper[i]){
-
-                           count++;
-                     }
-           }
-              return count;
+            }
+               return count;
     }
 };
