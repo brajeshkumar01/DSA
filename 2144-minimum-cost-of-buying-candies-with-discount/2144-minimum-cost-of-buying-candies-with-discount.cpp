@@ -6,19 +6,19 @@ public:
           sort(cost.begin() , cost.end());
           int mincost = 0;
           int count = 0;
-          
+
           for(int i = n-1; i>=0; i--){
 
-              count++;
+                 count++;
 
-              if(count == 3){
+                 if(count == 3){
 
-                  count = 0;  // 3rd candy free
-                  continue;
-              }
-
-               mincost += cost[i];
+                      count = 0;
+                      continue;
+                 }
+                   
+                   mincost += cost[i];
           }
-             return mincost;
+            return mincost;
     }
 };
