@@ -4,15 +4,15 @@ public:
         
         priority_queue<int , vector<int>, greater<int>>maxheap;
 
-         for(int num : nums){
+        for(int num : nums){
 
               maxheap.push(num);
-
               if(maxheap.size() > k){
 
-                  maxheap.pop();
+                   maxheap.pop();
               }
-         }
-            return maxheap.top();
+        }
+
+          return maxheap.top();
     }
 };
