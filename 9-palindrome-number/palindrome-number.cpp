@@ -9,13 +9,13 @@ public:
 
           while(left < right){
 
-                if(str[left] != str[right]){
+                 if(str[left] != str[right]){
 
-                      return false;
-                }
-                  left++;
-                  right--;
+                       return false;
+                 }
+                   left++;
+                   right--;
           }
-             return true;
+            return true;
     }
 };
