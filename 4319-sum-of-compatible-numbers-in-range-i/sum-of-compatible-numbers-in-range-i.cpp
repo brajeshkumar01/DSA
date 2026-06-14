@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int sumOfGoodIntegers(int n, int k) {
+        
+          int sum = 0;
+          int x = 0;
+          
+          for(int i = max(n-k , 1); i<=n+k; i++){
+
+                if(abs(n - i) <= k && (n & i) == 0){
+
+                       x = i;
+
+                       sum+=x;
+                }
+          }
+            return sum;
+    }
+};
