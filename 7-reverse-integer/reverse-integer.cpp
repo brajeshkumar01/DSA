@@ -7,10 +7,8 @@ public:
          while(x != 0){
 
                ans = ans * 10 + x % 10;
-
                x /= 10;
          }
-
            return (ans > INT_MAX || ans < INT_MIN) ? 0 : ans;
     }
 };
