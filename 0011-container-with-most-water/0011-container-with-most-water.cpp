@@ -5,23 +5,23 @@ public:
         int n = height.size();
         int left = 0 , right = n-1;
         int maxwater = 0;
+
         while(left < right){
 
-                int currlen = min(height[left] , height[right]);
-                int currwidth = right - left;
+              int currlen = min(height[left] , height[right]);
+              int width = right - left;
 
-                int currwater = currlen * currwidth;
+              int currarea = currlen * width;
 
-                maxwater = max(maxwater , currwater);
+              maxwater = max(maxwater , currarea);
 
-                if(height[left] < height[right]){
+              if(height[left] < height[right]){
 
-                      left++;
+                   left++;
+              }else{
 
-                }else{
-
-                     right--;
-                }
+                    right--;
+              }
         }
            return maxwater;
     }
