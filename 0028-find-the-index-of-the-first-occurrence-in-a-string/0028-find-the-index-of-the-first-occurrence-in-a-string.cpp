@@ -7,10 +7,10 @@ public:
 
          for(int i = 0; i<n1; i++){
 
-               if(needle == haystack.substr(i , n2)){
+              if(needle == haystack.substr(i , n2)){
 
-                   return i;
-               }
+                    return i;
+              }
          }
             return -1;
     }
