@@ -1,40 +1,41 @@
 class Solution {
 public:
 
-    bool ispalindrome(string &s , int left , int right){
+    bool ispalindrome(string& s, int left , int right){
 
           while(left < right){
 
-               if(s[left] != s[right]){
+              if(s[left] != s[right]){
 
-                     return false;
-               }
-                  left++;
-                  right--;
+                  return false;
+              }
+                left++;
+                right--;
           }
              return true;
     }
     string longestPalindrome(string s) {
-        
+          
           int n = s.length();
-          string maxlen = "";
 
-          int left = 0 , right = n-1;
+          string maxlen = "";
+          int left = 0, right = n-1;
 
           for(left = 0; left < n; left++){
 
-               for(right = left; right<n; right++){
-                   
+              for(right = left; right < n; right++){
+
                    if(ispalindrome(s , left , right)){
-                    string len = s.substr(left , right-left+1);
 
-                    if(len.length() > maxlen.length()){
+                        string len = s.substr(left , right-left+1);
 
-                           maxlen = len;
-                    }
-               }
-             }
+                        if(len.length() > maxlen.length()){
+
+                              maxlen = len;
+                        }
+                   }
+              }
           }
-            return maxlen;
+             return maxlen;
     }
 };
