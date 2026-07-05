@@ -7,14 +7,14 @@ public:
 
             for(int i = 0; i<n; i++){
 
-                   if(nums[i] == target){
+                  if(nums[i] == target){
 
-                       if(result[0] == -1){
+                      if(result[0] == -1){
 
-                            result[0] = i;
-                       }
+                           result[0] = i;
+                      }
                            result[1] = i;
-                   }
+                  }
             }
                return result;
     }
