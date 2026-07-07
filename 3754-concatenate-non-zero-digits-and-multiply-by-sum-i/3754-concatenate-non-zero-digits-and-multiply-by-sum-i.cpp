@@ -6,27 +6,28 @@ public:
           string ans = "";
           long long sum = 0;
 
-           for(int i = 0; i<str.size(); i++){
+          for(int i = 0; i<str.length(); i++){
 
-              if(str[i] != '0')
+                   if(str[i] != '0')
 
-                  ans.push_back(str[i]);
-              
-           }
+                     ans.push_back(str[i]);
+          }
 
-              if (ans.empty())
-                       return 0;
-                       
-              for(int i = 0; i<ans.size(); i++){
+              if(ans.empty()){
 
-                    sum += ans[i]-'0';
+                   return 0;
               }
 
-              long long num = stoll(ans);
+                for(int i = 0; i<ans.length(); i++){
 
-              if(ans.empty())
-                  return 0;
+                        sum += ans[i]-'0';
+                }
 
-              return num * sum;
+                  long long num = stoll(ans);
+
+                if(ans.empty())
+                     return 0;
+
+                      return num * sum;
     }
 };
