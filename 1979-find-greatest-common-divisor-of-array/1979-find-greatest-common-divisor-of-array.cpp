@@ -11,8 +11,8 @@ public:
 
            for(int i = 0; i<n; i++){
 
-                gcd(nums[0] , nums[n-1]);
+                 gcd(nums[0] , nums[n-1]);
            }
-             return gcd(nums[0] , nums[n-1]);
+              return gcd(nums[0], nums[n-1]);
     }
 };
