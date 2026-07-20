@@ -11,35 +11,31 @@ public:
 
                if(nums1[i] < nums2[j]){
 
-                   merged.push_back(nums1[i]);
-
-                   i++;
+                    merged.push_back(nums1[i]);
+                    i++;
                }else{
 
                    merged.push_back(nums2[j]);
                    j++;
                }
-         }
-                 while(i < n1){
+         } 
+            while(i < n1){
 
-                      merged.push_back(nums1[i]);
-                      i++;
-                 }
-
-                 while(j < n2){
-
-                      merged.push_back(nums2[j]);
-                      j++;
-                 }
-            int n = n1+n2;
-
-            if(n % 2 == 0){
-
-                  return (merged[n/2-1] + merged[n/2])/2.0;
-            }else{
-
-                 return merged[n/2];
+                   merged.push_back(nums1[i]);
+                   i++;
             }
-               
+              while(j < n2){
+
+                    merged.push_back(nums2[j]);
+                    j++;
+              }
+                int n = n1+n2;
+                if(n % 2 == 0){
+
+                       return (merged[n/2-1] + merged[n/2])/2.0;
+                }else{
+
+                      return(merged[n/2]);
+                }
     }
 };
