@@ -4,17 +4,17 @@ public:
           
           sort(intervals.begin() , intervals.end());
           vector<vector<int>>result;
-           
-            for(const auto& interval : intervals){
 
-                   if(result.empty() || result.back()[1] < interval[0]){
+          for(const auto& interval : intervals){
 
-                        result.push_back(interval);
-                   }
+                  if(result.empty() || result.back()[1] < interval[0]){
 
-                     result.back()[1] = max(result.back()[1] , interval[1]);
-            }
-              return result;
+                         result.push_back(interval);
+                  }
+
+                    result.back()[1] = max(result.back()[1] , interval[1]);
+          }
+             return result;
     }
 };
 
