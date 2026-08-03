@@ -6,13 +6,13 @@ public:
 
         for(int num : nums){
 
-              maxheap.push(num);
-              if(maxheap.size() > k){
+                maxheap.push(num);
 
-                   maxheap.pop();
-              }
+                if(maxheap.size() > k){
+
+                      maxheap.pop();
+                }
         }
-
-          return maxheap.top();
+             return maxheap.top();
     }
 };
