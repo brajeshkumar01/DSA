@@ -7,15 +7,14 @@ public:
 
          for(int i = 0; i<n; i++){
 
-               for(int j = i+1; j<n; j++){
+              for(int j = i+1; j<n; j++){
 
-                    long long g = gcd(nums[i] , nums[j]);
+                      long long g =  gcd(nums[i] , nums[j]);
+                      long long curr = 1LL * nums[i] * nums[j] / (g * g);
 
-                    long long curr = 1LL * nums[i] * nums[j] / (g * g);
-
-                    ans = max(ans , curr);
-               }
+                      ans = max(ans , curr);
+              }
          }
-            return ans;
+           return ans;
     }
 };
